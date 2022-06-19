@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "bouquet:block/white_rose_bush_top"
+  }
+}

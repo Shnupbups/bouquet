@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "bouquet:cyan_rose_bush",
+    "bouquet:yellow_rose_bush",
+    "minecraft:rose_bush",
+    "minecraft:peony",
+    "bouquet:white_rose_bush",
+    "bouquet:black_rose_bush",
+    "bouquet:pink_rose_bush"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:pink_tulip",
+    "bouquet:pink_rose",
+    "bouquet:peony",
+    "bouquet:hibiscus",
+    "bouquet:hollyhock",
+    "bouquet:pink_hyacinth",
+    "bouquet:pink_daisy"
+  ]
+}

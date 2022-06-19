@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "pink_dye",
+  "ingredients": [
+    {
+      "tag": "c:tall_pink_flowers"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:pink_dye"
+  }
+}

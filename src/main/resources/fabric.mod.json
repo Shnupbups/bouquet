@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "bouquet",
+  "version": "1.0.0",
+
+  "name": "Bouquet",
+  "description": "Adds an assortment of flowers to decorate your world!",
+  "authors": [
+    "Shnupbups"
+  ],
+
+  "license": "LGPLv3",
+  "icon": "assets/bouquet/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.shnupbups.bouquet.Bouquet"
+    ],
+    "client": [
+      "com.shnupbups.bouquet.BouquetClient"
+    ],
+    "modmenu": [
+      "com.shnupbups.bouquet.config.BouquetConfigScreen"
+    ],
+    "fabric-datagen": [
+      "com.shnupbups.bouquet.datagen.BouquetDatagen"
+    ]
+  },
+  "mixins": [
+    "bouquet.mixins.json"
+  ],
+  "accessWidener": "bouquet.accesswidener",
+
+  "depends": {
+    "fabricloader": ">=0.6.1",
+    "fabric": "*"
+  }
+}

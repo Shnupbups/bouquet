@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#bouquet:bare_flower_bushes",
+    "#c:tall_black_flowers",
+    "#c:tall_cyan_flowers",
+    "#c:tall_magenta_flowers",
+    "#c:tall_pink_flowers",
+    "#c:tall_red_flowers",
+    "#c:tall_white_flowers",
+    "#c:tall_yellow_flowers"
+  ]
+}

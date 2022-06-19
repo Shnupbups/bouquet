@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "bouquet:bare_black_rose_bush",
+    "bouquet:bare_peony_bush",
+    "bouquet:bare_pink_rose_bush",
+    "bouquet:bare_white_rose_bush",
+    "bouquet:bare_red_rose_bush",
+    "bouquet:bare_yellow_rose_bush",
+    "bouquet:bare_cyan_rose_bush"
+  ]
+}

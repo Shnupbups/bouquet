@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "bouquet:primrose",
+    "bouquet:daffodil",
+    "bouquet:yellow_hyacinth",
+    "bouquet:buttercup",
+    "bouquet:marigold",
+    "bouquet:yellow_rose",
+    "minecraft:dandelion",
+    "bouquet:yellow_pansy",
+    "bouquet:yellow_poppy"
+  ]
+}

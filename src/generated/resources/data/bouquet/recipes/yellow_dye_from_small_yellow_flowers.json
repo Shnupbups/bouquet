@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "yellow_dye",
+  "ingredients": [
+    {
+      "tag": "c:small_yellow_flowers"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
+}

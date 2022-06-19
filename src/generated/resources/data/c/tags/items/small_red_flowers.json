@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "bouquet:begonia",
+    "bouquet:red_hyacinth",
+    "minecraft:red_tulip",
+    "bouquet:amaryllis",
+    "minecraft:poppy",
+    "bouquet:red_rose"
+  ]
+}

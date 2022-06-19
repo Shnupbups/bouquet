@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.shnupbups.bouquet.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ShearsDispenserBehaviorMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

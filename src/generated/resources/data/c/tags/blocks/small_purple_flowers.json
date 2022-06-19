@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "bouquet:iris",
+    "bouquet:lavender",
+    "bouquet:bellflower",
+    "bouquet:crocus",
+    "bouquet:purple_hyacinth",
+    "bouquet:purple_pansy"
+  ]
+}

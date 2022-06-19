@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "#c:small_black_flowers",
+    "#c:small_blue_flowers",
+    "#c:small_cyan_flowers",
+    "#c:small_light_blue_flowers",
+    "#c:small_light_gray_flowers",
+    "#c:small_magenta_flowers",
+    "#c:small_orange_flowers",
+    "#c:small_pink_flowers",
+    "#c:small_purple_flowers",
+    "#c:small_red_flowers",
+    "#c:small_white_flowers",
+    "#c:small_yellow_flowers"
+  ]
+}

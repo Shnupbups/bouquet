@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "black_dye",
+  "ingredients": [
+    {
+      "tag": "c:small_black_flowers"
+    }
+  ],
+  "result": {
+    "item": "minecraft:black_dye"
+  }
+}
