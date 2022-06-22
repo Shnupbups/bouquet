@@ -20,12 +20,12 @@ import com.shnupbups.bouquet.Bouquet;
 
 public class FlowerBushBlock extends TallFlowerBlock {
 	public final Supplier<Block> bareBushSupplier;
-	public final Block singleFlowerSupplier;
+	public final Block singleFlower;
 
-	public FlowerBushBlock(Supplier<Block> bareBushSupplier, Block singleFlowerSupplier, Settings settings) {
+	public FlowerBushBlock(Supplier<Block> bareBushSupplier, Block singleFlower, Settings settings) {
 		super(settings);
 		this.bareBushSupplier = bareBushSupplier;
-		this.singleFlowerSupplier = singleFlowerSupplier;
+		this.singleFlower = singleFlower;
 	}
 
 	public Block getBareBush() {
@@ -33,7 +33,7 @@ public class FlowerBushBlock extends TallFlowerBlock {
 	}
 
 	public Block getSingleFlower() {
-		return singleFlowerSupplier;
+		return singleFlower;
 	}
 
 	public void shear(World world, BlockState state, BlockPos pos, @Nullable ItemStack shears, @Nullable PlayerEntity player) {

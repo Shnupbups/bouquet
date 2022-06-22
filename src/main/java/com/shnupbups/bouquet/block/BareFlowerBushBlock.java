@@ -17,8 +17,12 @@ public class BareFlowerBushBlock extends TallFlowerBlock {
 		this.floweringBush = floweringBush;
 	}
 
+	public Block getFloweringBush() {
+		return floweringBush;
+	}
+
 	@Override
 	public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-		Bouquet.convertDoubleTallPlant(floweringBush, world, state, pos);
+		Bouquet.convertDoubleTallPlant(getFloweringBush(), world, state, pos);
 	}
 }

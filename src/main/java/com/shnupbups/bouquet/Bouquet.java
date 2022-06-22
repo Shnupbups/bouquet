@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 
@@ -43,7 +44,20 @@ public class Bouquet implements ModInitializer {
 
 	public static final Identifier SHEAR_FLOWER_BUSH_SOUND_EVENT_ID = id("block.flower_bush.shear");
 	public static final SoundEvent SHEAR_FLOWER_BUSH_SOUND_EVENT = new SoundEvent(SHEAR_FLOWER_BUSH_SOUND_EVENT_ID);
-	
+
+	public static final int FLOWER_FIRE_BURN_CHANCE = 60;
+	public static final int FLOWER_FIRE_SPREAD_CHANCE = 100;
+
+	public static final float FLOWER_COMPOSTING_CHANCE = 0.65f;
+
+	public static final int FLOWER_TRADE_PRICE = 1;
+	public static final int FLOWER_TRADE_AMOUNT = 1;
+	public static final int FLOWER_TRADE_MAX_USES = 12;
+	public static final int FLOWER_TRADE_EXPERIENCE = 1;
+
+	public static final int SHEAR_FLOWER_BUSH_DROPS_MIN = 4;
+	public static final int SHEAR_FLOWER_BUSH_DROPS_MAX = 8;
+
 	@Override
 	public void onInitialize() {
 		BouquetBlocks.init();
@@ -51,20 +65,20 @@ public class Bouquet implements ModInitializer {
 		Registry.register(Registry.SOUND_EVENT, SHEAR_FLOWER_BUSH_SOUND_EVENT_ID, SHEAR_FLOWER_BUSH_SOUND_EVENT);
 
 		FlammableBlockRegistry flammableBlockRegistry = FlammableBlockRegistry.getDefaultInstance();
-		ArrayList<TradeOffers.Factory> wanderingTraderTradesOne = new ArrayList<>(Arrays.asList(TradeOffers.WANDERING_TRADER_TRADES.get(1)));
+		ArrayList<TradeOffers.Factory> wanderingTraderTradesOne = new ArrayList<>();
 		BouquetCollections.SMALL_BOUQUET_FLOWERS.forEach(block -> {
-			flammableBlockRegistry.add(block, 60, 100);
-			CompostingChanceRegistry.INSTANCE.add(block, 0.65f);
-			wanderingTraderTradesOne.add(new TradeOffers.SellItemFactory(block, 1, 1, 12, 1));
+			flammableBlockRegistry.add(block, FLOWER_FIRE_BURN_CHANCE, FLOWER_FIRE_SPREAD_CHANCE);
+			CompostingChanceRegistry.INSTANCE.add(block, FLOWER_COMPOSTING_CHANCE);
+			wanderingTraderTradesOne.add(new TradeOffers.SellItemFactory(block, FLOWER_TRADE_PRICE, FLOWER_TRADE_AMOUNT, FLOWER_TRADE_MAX_USES, FLOWER_TRADE_EXPERIENCE));
 		});
-		TradeOffers.WANDERING_TRADER_TRADES.replace(1, wanderingTraderTradesOne.toArray(new TradeOffers.Factory[0]));
+		TradeOfferHelper.registerWanderingTraderOffers(1, factories -> factories.addAll(wanderingTraderTradesOne));
 		BouquetCollections.TALL_BOUQUET_FLOWERS.forEach(block -> {
-			flammableBlockRegistry.add(block, 60, 100);
-			CompostingChanceRegistry.INSTANCE.add(block, 0.65f);
+			flammableBlockRegistry.add(block, FLOWER_FIRE_BURN_CHANCE, FLOWER_FIRE_SPREAD_CHANCE);
+			CompostingChanceRegistry.INSTANCE.add(block, FLOWER_COMPOSTING_CHANCE);
 		});
 		BouquetCollections.BARE_FLOWER_BUSHES.forEach(block -> {
-			flammableBlockRegistry.add(block, 60, 100);
-			CompostingChanceRegistry.INSTANCE.add(block, 0.65f);
+			flammableBlockRegistry.add(block, FLOWER_FIRE_BURN_CHANCE, FLOWER_FIRE_SPREAD_CHANCE);
+			CompostingChanceRegistry.INSTANCE.add(block, FLOWER_COMPOSTING_CHANCE);
 		});
 
 		UseBlockCallback.EVENT.register(((player, world, hand, hitResult) -> {
@@ -105,7 +119,7 @@ public class Bouquet implements ModInitializer {
 		convertDoubleTallPlant(bareRoseBush, world, state, pos);
 		ServerPlayerEntity serverPlayer = player instanceof ServerPlayerEntity ? (ServerPlayerEntity) player : null;
 		if(shears != null) shears.damage(1, world.getRandom(), serverPlayer);
-		Block.dropStack(world, pos, new ItemStack(singleFlower, world.getRandom().nextBetween(4, 8)));
+		Block.dropStack(world, pos, new ItemStack(singleFlower, world.getRandom().nextBetween(SHEAR_FLOWER_BUSH_DROPS_MIN, SHEAR_FLOWER_BUSH_DROPS_MAX)));
 		world.playSound(null, pos, SHEAR_FLOWER_BUSH_SOUND_EVENT, SoundCategory.BLOCKS, 1.0f, 1.0f);
 		world.emitGameEvent(player, GameEvent.SHEAR, pos);
 	}
